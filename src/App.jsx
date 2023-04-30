@@ -1,12 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Clicking from "./clicking.jsx";
+import "bulma/css/bulma.min.css";
+import Navbar from "./navbar";
 
 function App() {
   return (
-    <div className="App">
-      <Clicking />
-    </div>
+    <>
+      <Navbar />
+      <div className="App">
+        <Clicking />
+      </div>
+    </>
   );
 }
 

@@ -1,28 +1,40 @@
+import { useState } from "react";
+
 const Clicking = () => {
   const title = "Clicking Game";
-  var number = 0;
-  const handlePlus = () => {
-    console.log("Clicked");
-    number++;
+  let [number, setNumber] = useState(0);
+  let handlePlus = () => {
+    setNumber(number + 1);
   };
-  const handleMinus = () => {
-    number++;
+  let handleMinus = () => {
+    setNumber(number - 1);
   };
-  const handleMultiply = () => {
-    number++;
+
+  let handleMultiply = () => {
+    setNumber(number * number);
   };
-  const handleDivide = () => {
-    number++;
+
+  let handleDivide = () => {
+    setNumber(number / number);
   };
+
   return (
     <>
       <h2>{title}</h2>
       <h1>{number}</h1>
       <div>
-        <button onClick={handlePlus}>Plus key</button>
-        <button onClick={handleMinus}>Minus key</button>
-        <button onClick={handleMultiply}>Multiply key</button>
-        <button onClick={handleDivide}>Divide key</button>
+        <button onClick={handlePlus} className="button is-hero">
+          Plus key
+        </button>
+        <button onClick={handleMinus} className="button is-hero">
+          Minus key
+        </button>
+        <button onClick={handleMultiply} className="button is-hero">
+          Multiply key
+        </button>
+        <button onClick={handleDivide} className="button is-hero">
+          Divide key
+        </button>
       </div>
     </>
   );
